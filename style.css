@@ -1,0 +1,100 @@
+/* 共通スタイル */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #111;
+}
+
+/* 入力・ボタン */
+input {
+  padding: 10px 12px;
+  font-size: 16px; /* iOS自動拡大防止 */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 20px;
+  width: 250px;
+  max-width: 90%;
+  transition: all 0.2s;
+  background-color: #fff;
+  color: #222;
+}
+
+input:focus {
+  border-color: #555;
+  outline: none;
+}
+
+button {
+  padding: 10px 18px;
+  font-size: 16px; /* iOS自動拡大防止 */
+  margin-left: 10px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  background-color: #3c628a;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #43668A;
+  border-color: #555;
+}
+
+#result {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 18px;
+  min-height: 24px;
+  word-break: break-word;
+}
+
+
+#explanation {
+  display: none; /* 初期非表示 */
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background: #eee;
+}
+
+/* レスポンシブ */
+@media (max-width: 480px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  input {
+    width: 90%;
+    font-size: 16px; /* iOS入力時の自動拡大防止 */
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 16px; /* iOS入力時の自動拡大防止 */
+    margin-left: 5px;
+  }
+
+  #result {
+    font-size: 16px;
+  }
+
+  h1, h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
