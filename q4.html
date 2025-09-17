@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>＃004</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>＃004</h2>
+
+  <input type="text" id="answer" placeholder="答え">
+  <button type="button" onclick="checkAnswer()">判定</button>
+
+  <p id="result"></p>
+
+
+
+  <script>
+    const inputEl = document.getElementById("answer");
+    const resultEl = document.getElementById("result");
+    const explanationEl = document.getElementById("explanation");
+
+    const correctAnswers = ["じかん", "時間"]; // 正答の候補
+
+    function checkAnswer() {
+      const input = inputEl.value.trim().replace(/\s+/g, "");
+      if (correctAnswers.includes(input)) {
+        resultEl.innerText = "✅ 正解！";
+        explanationEl.style.display = "block";
+      } else {
+        resultEl.innerText = "❌ 不正解";
+        explanationEl.style.display = "none";
+      }
+    }
+
+    // Enterキーでも判定可能
+    inputEl.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        checkAnswer();
+      }
+    });
+  </script>
+</body>
+</html>
